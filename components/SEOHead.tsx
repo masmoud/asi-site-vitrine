@@ -1,5 +1,3 @@
-"use client";
-
 import { metadata } from "@/lib/metadata";
 import Head from "next/head";
 import Script from "next/script";

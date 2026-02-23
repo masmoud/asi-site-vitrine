@@ -6,7 +6,6 @@ import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SEOHead from "@/components/SEOHead";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import thumbnail from "../public/assets/images/asi-logo-bg.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,20 +25,13 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="min-h-screen flex flex-col bg-gray-50">
-            <FloatingCTA />
-            <Header />
-            <main className="flex flex-col">{children}</main>
-            <Footer />
-          </div>
-          <Toaster position="top-right" toastOptions={{ duration: 2000 }} />
-        </ThemeProvider>
+        <div className="min-h-screen flex flex-col bg-gray-50">
+          <FloatingCTA />
+          <Header />
+          <main className="flex flex-col">{children}</main>
+          <Footer />
+        </div>
+        <Toaster position="top-right" toastOptions={{ duration: 2000 }} />
       </body>
     </html>
   );

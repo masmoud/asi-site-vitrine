@@ -3,6 +3,7 @@ import { Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../public/assets/images/aswer-logo.png";
+import HeaderTitle from "./HeaderTitle";
 
 const Header = () => (
   <header id="accueil" className="relative w-full bg-gray-900 text-white">
@@ -19,9 +20,7 @@ const Header = () => (
       </div>
 
       {/* Titre et slogan */}
-      <h1 className="text-4xl lg:text-5xl font-bold drop-shadow-lg">
-        Aswer Sécurité Incendie
-      </h1>
+      <HeaderTitle />
       <p className="text-lg lg:text-2xl text-white/90 max-w-2xl">
         Protection de vos locaux et sécurité des personnes en Ile-de-France
       </p>

@@ -1,5 +1,3 @@
-"use client";
-
 import { data } from "@/lib/data";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
