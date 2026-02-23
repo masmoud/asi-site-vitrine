@@ -1,8 +1,10 @@
 import favicon from "../app/favicon.ico";
 import thumbnail from "../public/assets/images/asi-logo-bg.jpg";
 
-export const siteMetaData = {
-  metadataBase: new URL("https://aswersecuriteincendie.fr/"),
+export const siteMetadata = {
+  title: "Aswer Sécurité Incendie à 93100 Montreuil",
+  description:
+    "Aswer Sécurité Incendie assure la sécurité incendie, le gardiennage et l’intervention sur alarme pour entreprises et particuliers en Ile-de-France.",
   keywords: [
     "sécurité incendie",
     "sécurité",
@@ -13,19 +15,6 @@ export const siteMetaData = {
     "services sécurité Ile-de-France",
     "micro-entreprise sécurité",
   ],
-  authors: [
-    {
-      name: "Mohamed Amoussa",
-      url: "https://www.linkedin.com/in/mohamed-amoussa",
-    },
-  ],
-  creator: "Mohamed Amoussa",
-  publisher: "Mohamed Amoussa",
-  referrer: "origin-when-cross-origin",
-  robots: { index: true, follow: true },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-  },
   icons: {
     icon: favicon.src,
   },
@@ -49,7 +38,29 @@ export const siteMetaData = {
     description: "Sécurité incendie et gardiennage en Île-de-France",
     images: [thumbnail.src],
   },
-  defaultTitle: "Aswer Sécurité Incendie à 93100 Montreuil",
-  defaultDescription:
-    "Aswer Sécurité Incendie à Montreuil (93100) assure la sécurité incendie, le gardiennage et l’intervention sur alarme pour entreprises et particuliers en Ile-de-France.",
+  googleVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  jsonLD: {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Aswer Sécurité Incendie",
+    url: "https://aswersecuriteincendie.fr/",
+    image: thumbnail.src,
+    telephone: "+33619908273",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "56 rue Rochebrune",
+      addressLocality: "Montreuil",
+      addressRegion: "Ile-de-France",
+      postalCode: "93100",
+      addressCountry: "FR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 48.8636,
+      longitude: 2.443,
+    },
+    priceRange: "€",
+    description:
+      "Aswer Sécurité Incendie assure la sécurité incendie, le gardiennage et l’intervention sur alarme pour entreprises et particuliers en Ile-de-France.",
+  },
 };

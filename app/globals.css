@@ -124,3 +124,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  font-family:
+    "Geist",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}

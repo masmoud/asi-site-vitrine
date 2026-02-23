@@ -42,7 +42,7 @@ const Footer = () => (
         Mentions légales
       </Link>
       <Link
-        href="/politique-de-confidentialite"
+        href="/politique-confidentialite"
         className="hover:text-white transition"
       >
         Politique de confidentialité

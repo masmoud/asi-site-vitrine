@@ -5,10 +5,22 @@ import "./globals.css";
 import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SEOHead from "@/components/SEOHead";
-import thumbnail from "../public/assets/images/asi-logo-bg.jpg";
+import { siteMetadata } from "@/lib/metadata";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const generateMetadata = (): Metadata => ({
+  title: siteMetadata.title,
+  description: siteMetadata.description,
+  keywords: siteMetadata.keywords.join(", "),
+  icons: siteMetadata.icons,
+  openGraph: siteMetadata.openGraph,
+  twitter: siteMetadata.twitter,
+  verification: {
+    google: siteMetadata.googleVerification,
+  },
+});
 
 export default function RootLayout({
   children,
@@ -17,13 +29,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <head>
-        <SEOHead
-          title="Aswer Sécurité Incendie à Montreuil - Sécurité incendie et gardiennage"
-          description="Aswer Sécurité Incendie protège vos locaux et événements en Ile-de-France : sécurité incendie, intervention sur alarme, gardiennage et vente de matériel."
-          image={thumbnail.src}
-        />
-      </head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col bg-gray-50">
           <FloatingCTA />

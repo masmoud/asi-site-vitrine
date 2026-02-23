@@ -1,8 +1,14 @@
 "use client";
 
-import { Building, Mail, MessageCircle, Phone, User } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import {
+  BuildingIcon,
+  MailIcon,
+  MessageCircleIcon,
+  PhoneIcon,
+  UserIcon,
+} from "./icons";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import {
@@ -60,8 +66,12 @@ const FormPremium = () => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-4 w-full max-w-lg mx-auto"
     >
+      {/* Select accessible */}
       <Select name="service" required>
-        <SelectTrigger className="w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700">
+        <SelectTrigger
+          aria-label="Sélectionnez le service"
+          className="w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700"
+        >
           <SelectValue placeholder="Sélectionnez le service..." />
         </SelectTrigger>
         <SelectContent>
@@ -75,9 +85,10 @@ const FormPremium = () => {
         </SelectContent>
       </Select>
 
+      {/* Nom complet */}
       <div className="relative">
-        <User
-          className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"
+        <UserIcon
+          className="absolute top-1/2 left-3 -translate-y-1/2 text-neutral-700"
           size={18}
         />
         <Input
@@ -89,9 +100,10 @@ const FormPremium = () => {
         />
       </div>
 
+      {/* Société */}
       <div className="relative">
-        <Building
-          className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"
+        <BuildingIcon
+          className="absolute top-1/2 left-3 -translate-y-1/2 text-neutral-700"
           size={18}
         />
         <Input
@@ -103,9 +115,10 @@ const FormPremium = () => {
         />
       </div>
 
+      {/* Email */}
       <div className="relative">
-        <Mail
-          className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"
+        <MailIcon
+          className="absolute top-1/2 left-3 -translate-y-1/2 text-neutral-700"
           size={18}
         />
         <Input
@@ -117,9 +130,10 @@ const FormPremium = () => {
         />
       </div>
 
+      {/* Téléphone */}
       <div className="relative">
-        <Phone
-          className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"
+        <PhoneIcon
+          className="absolute top-1/2 left-3 -translate-y-1/2 text-neutral-700"
           size={18}
         />
         <Input
@@ -131,9 +145,10 @@ const FormPremium = () => {
         />
       </div>
 
+      {/* Message */}
       <div className="relative">
-        <MessageCircle
-          className="absolute top-3 left-3 text-gray-400"
+        <MessageCircleIcon
+          className="absolute top-3 left-3 text-neutral-700"
           size={18}
         />
         <Textarea
@@ -145,6 +160,7 @@ const FormPremium = () => {
         />
       </div>
 
+      {/* Honeypot pour bots */}
       <input
         type="text"
         name="website"
@@ -153,6 +169,7 @@ const FormPremium = () => {
         autoComplete="off"
       />
 
+      {/* Submit */}
       <Button
         type="submit"
         disabled={loading}
