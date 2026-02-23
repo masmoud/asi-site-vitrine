@@ -1,7 +1,7 @@
 import favicon from "../app/favicon.ico";
 import thumbnail from "../public/assets/images/asi-logo-bg.jpg";
 
-export const metadata = {
+export const siteMetaData = {
   metadataBase: new URL("https://aswersecuriteincendie.fr/"),
   keywords: [
     "sécurité incendie",
@@ -24,7 +24,7 @@ export const metadata = {
   referrer: "origin-when-cross-origin",
   robots: { index: true, follow: true },
   verification: {
-    google: "REMPLACÉ",
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
   icons: {
     icon: favicon.src,
@@ -42,6 +42,12 @@ export const metadata = {
         alt: "Aswer Sécurité Incendie",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aswer Sécurité Incendie",
+    description: "Sécurité incendie et gardiennage en Île-de-France",
+    images: [thumbnail.src],
   },
   defaultTitle: "Aswer Sécurité Incendie à 93100 Montreuil",
   defaultDescription:
