@@ -5,6 +5,7 @@ import "./globals.css";
 import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
 import { siteMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 
@@ -33,7 +34,10 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col bg-gray-50">
           <FloatingCTA />
           <Header />
-          <main className="flex flex-col">{children}</main>
+          <main className="flex flex-col">
+            <PageTransition>{children}</PageTransition>
+          </main>
+
           <Footer />
         </div>
         <Toaster position="top-right" toastOptions={{ duration: 2000 }} />

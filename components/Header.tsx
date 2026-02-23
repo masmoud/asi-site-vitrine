@@ -3,6 +3,7 @@ import { Phone } from "lucide-react";
 import Link from "next/link";
 import HeaderTitle from "./HeaderTitle";
 import Logo from "./Logo";
+import ScrollArrow from "./ScrollArrow";
 
 const Header = () => (
   <header id="accueil" className="relative w-full bg-gray-900 text-white">
@@ -36,12 +37,7 @@ const Header = () => (
     </div>
 
     {/* Flèche scroll */}
-    <Link
-      href="#services"
-      className="absolute bottom-10 animate-bounce text-white text-3xl"
-    >
-      ↓
-    </Link>
+    <ScrollArrow />
   </header>
 );
 
