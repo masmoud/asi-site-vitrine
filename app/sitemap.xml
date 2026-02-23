@@ -1,0 +1,22 @@
+import { MetadataRoute } from "next";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: "https://aswersecuriteincendie.fr",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: "https://aswersecuriteincendie.fr/mentions-legales",
+      lastModified: new Date(),
+      priority: 0.3,
+    },
+    {
+      url: "https://aswersecuriteincendie.fr/politique-de-confidentialite",
+      lastModified: new Date(),
+      priority: 0.3,
+    },
+  ];
+}
